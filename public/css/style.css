@@ -1,0 +1,6 @@
+body, input, select, table {
+  font-family: "Verdana", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+label { display: block; }
+em { font-size: 0.8em; }

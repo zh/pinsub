@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Topic: <%= @topic %></title>
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+</head>
+<body>
+<h2>Topic: <%= @topic %></h2>
+<% if !@items.blank? %>
+
+<% if @items.respond_to?(:current_page) %>
+<p>
+<% if !@items.first_page? %>
+<a href="/t/<%= @topic %>?page=<%= @items.prev_page %>">&lt;&lt; Prev</a>
+<% end %>
+&nbsp;Page: <%= @items.current_page %> (of  <%= @items.page_count %>)&nbsp;
+<% if !@items.last_page? %>
+<a href="/t/<%= @topic %>?page=<%= @items.next_page %>">Next &gt;&gt;</a>
+<% end %>
+</p>
+<% end %> 
+
+<div id="content">
+<% @items.each do |i| %>
+<div class="entry">  
+<a href="<%= i[:link] %>"><%= i[:title] %></a>
+<% if i[:content] %>
+<div><%= i[:content] %></div>
+<% end %>
+<div><small><%= Time.parse(i[:created].to_s).time_since(Time.now) %> ago
+<% if i[:author] %>
+ by <a href="http://pinboard.in/u:<%= i[:author] %>"><%= i[:author] %></a>
+<% end %> 
+</small></div>
+</div>
+<br/>
+<% end %>  
+</div>
+
+<% if @items.respond_to?(:current_page) %>
+<p>
+<% if !@items.first_page? %>
+<a href="/t/<%= @topic %>?page=<%= @items.prev_page %>">&lt;&lt; Prev</a>
+<% end %>
+&nbsp;Page: <%= @items.current_page %> (of  <%= @items.page_count %>)&nbsp;
+<% if !@items.last_page? %>
+<a href="/t/<%= @topic %>?page=<%= @items.next_page %>">Next &gt;&gt;</a>
+<% end %>
+</p>
+<% end %> 
+<% else %> 
+<div id="content"></div>
+<% end %> 
+
+<p><a href="/">All topics</a> | <a href="/admin">Administration</a></p>
+<p><small>Copyright &copy; 2010 by <a href="http://github.com/zh/">Stoyan Zhekov</a></small></p>
+</body>
+</html>
