@@ -22,3 +22,5 @@ In the PuSH hub (I prefer Superfeedr) subscription form enter:
 * Callback: *http://{you_domain}/sub/{some_topic}*
 
 Separate topics will be available on URLs: *http://{you_domain}/t/{some_topic}*
+
+The script can be seen in action on URL: http://pinsub.heroku.com/
