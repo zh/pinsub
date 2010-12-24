@@ -1,17 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Topic: <%= @topic %></title>
+<title>Topic: <%= @topic %></title>
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
 </head>
 <body>
-<h2>Topic: <%= @topic %></h2>
 <% if !@items.blank? %>
 
 <% if @items.respond_to?(:current_page) %>
-<p>
 <% if !@items.first_page? %>
+<h2><a href="/t/<%= @topic %>">Topic: <%= @topic %></a></h2>
+<p>
 <a href="/t/<%= @topic %>?page=<%= @items.prev_page %>">&lt;&lt; Prev</a>
+<% else %>
+<h2>Topic: <%= @topic %></h2>
+<p>
 <% end %>
 &nbsp;Page: <%= @items.current_page %> (of  <%= @items.page_count %>)&nbsp;
 <% if !@items.last_page? %>
@@ -49,6 +52,7 @@
 </p>
 <% end %> 
 <% else %> 
+<h2>Topic: <%= @topic %></h2>
 <div id="content"></div>
 <% end %> 
 

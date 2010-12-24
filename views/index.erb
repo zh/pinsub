@@ -5,13 +5,16 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
 </head>
 <body>
-<h2><a href="/">All topics</a></h2>
 <% if !@items.blank? %>
 
 <% if @items.respond_to?(:current_page) %>
-<p>
 <% if !@items.first_page? %>
+<h2><a href="/">All topics</a></h2>
+<p>
 <a href="/?page=<%= @items.prev_page %>">&lt;&lt; Prev</a>
+<% else %>
+<h2>All topics</h2>
+<p>
 <% end %>
 &nbsp;Page: <%= @items.current_page %> (of  <%= @items.page_count %>)&nbsp;
 <% if !@items.last_page? %>
@@ -49,6 +52,7 @@
 </p>
 <% end %>
 <% else %>
+<h2>All topics</h2>
 <div id="content"></div>
 <% end %>
 
