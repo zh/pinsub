@@ -48,7 +48,13 @@ end
 
 get '/' do
   page = (params[:page] || 1).to_i
-  @items = DB[:items].order(:created.desc).paginate(page,20)
+  if params['clear'] && params['clear'] == APASS
+    DB[:items].delete
+    @items = []
+    redirect('/admin') if params['admin']
+  else
+    @items = DB[:items].order(:created.desc).paginate(page,20)
+  end  
   erb :index
 end  
 
