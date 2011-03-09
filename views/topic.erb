@@ -26,7 +26,7 @@
 <div id="content">
 <% @items.each do |i| %>
 <div class="entry">  
-<a href="<%= i[:link] %>"><%= i[:title] %></a>
+<a href="<%= CGI.unescape(i[:link]) %>"><%= i[:title] %></a>
 <% if i[:content] %>
 <div><%= i[:content] %></div>
 <% end %>
