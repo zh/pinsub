@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 
 $KCODE = 'u'
-%w{jcode cgi open-uri logger rubygems sinatra sequel global}.each {|lib| require lib}
-require 'simple-rss'
+# add lib dir to load path
+$:.unshift File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
+require 'bundler_helper'
+%w{jcode cgi open-uri logger sinatra global}.each {|lib| require lib}
 
 configure do
   enable :logging
