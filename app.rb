@@ -108,6 +108,7 @@ post '/sub/:topic/?' do |topic|
         content = e.summary.strip_tags.truncate(400) if e.summary
       end  
     end
+    content = nil unless title != content
     author = e.author.strip
     begin  
       DB[:items].insert(:topic=>topic,:author=>author,
