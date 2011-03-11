@@ -3,4 +3,9 @@
 *~
 *.log
 *.db
+.DS_Store
 backup
+.idea
+.bundle
+vendor/ruby
+Gemfile.lock
