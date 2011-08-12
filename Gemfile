@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rake'
-gem 'sqlite3'
 gem 'sequel', '>=3.0.0'
 gem 'simple-rss', '>=1.2.2'
 gem 'sinatra', '>=1.0', :require => false
@@ -11,6 +10,10 @@ gem 'thin'
 
 group :production do
   gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
 end
  
 group :test do

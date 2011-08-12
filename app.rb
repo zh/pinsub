@@ -6,6 +6,14 @@ $:.unshift File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
 require 'bundler_helper'
 %w{cgi open-uri logger sinatra global}.each {|lib| require lib}
 
+configure :production do
+  require 'pg'
+end
+
+configure :development, :test do
+  require 'sqlite3'
+end
+
 configure do
   enable :logging
   disable :sessions
