@@ -113,9 +113,8 @@ post '/sub/:topic/?' do |topic|
     content = nil unless title != content
     author = e.author.strip
     begin  
-      DB[:items].insert(:topic=>topic,:author=>author,
-                        :title=>title,:content=>content,:link=>e.link,
-                        :created=>Time.now)
+      DB[:items].insert(topic:topic,author:author,title:title,content:content,
+                        link:e.link,created:Time.now)
     rescue Exception => ex
       puts ex.to_s
       next

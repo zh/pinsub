@@ -12,6 +12,7 @@ group :test do
   gem 'rack-test'
   gem 'awesome_print'
   gem 'simplecov', '>=0.4.0', :require => false
+  gem 'nokogiri'
 end
 
 group :development do

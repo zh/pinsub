@@ -6,6 +6,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'rspec'
 require 'rack/test'
+require 'nokogiri'
 
 set :environment, :test
 set :run, false

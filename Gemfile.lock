@@ -8,6 +8,7 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
+    nokogiri (1.5.0)
     rack (1.2.1)
     rack-test (0.5.4)
       rack (>= 1.0)
@@ -41,6 +42,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   erubis (>= 2.6.6)
+  nokogiri
   rack-test
   rake
   rspec (>= 2.4.0)

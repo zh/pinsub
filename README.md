@@ -7,6 +7,7 @@ PubSubHubbub subscriber for the PinBoards tags RSS feeds.
     sinatra
     sequel
     simple-rss
+    erubis
 
 ## Heroku config (environment variables)
 

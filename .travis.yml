@@ -1,0 +1,15 @@
+rvm:
+  - 1.9.2
+  - rbx
+  - ree
+  - jruby
+  - ruby-head
+env:
+  - ISOLATED=true
+  - ISOLATED=false
+  - DB=mysql
+  - DB=postgres
+branches:
+  only:
+    - master
+    - develop
