@@ -1,10 +1,10 @@
+# encoding: UTF-8
 #!/usr/bin/env ruby
 
-$KCODE = 'u'
 # add lib dir to load path
 $:.unshift File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
 require 'bundler_helper'
-%w{jcode cgi open-uri logger sinatra global}.each {|lib| require lib}
+%w{cgi open-uri logger sinatra global}.each {|lib| require lib}
 
 configure do
   enable :logging
@@ -113,9 +113,8 @@ post '/sub/:topic/?' do |topic|
     content = nil unless title != content
     author = e.author.strip
     begin  
-      DB[:items].insert(:topic=>topic,:author=>author,
-                        :title=>title,:content=>content,:link=>e.link,
-                        :created=>Time.now)
+      DB[:items].insert(:topic=>topic, :author=>author, :title=>title, :content=>content,
+                        :link=>e.link, :created=>Time.now)
     rescue Exception => ex
       puts ex.to_s
       next

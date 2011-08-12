@@ -1,0 +1,12 @@
+rvm:
+  - 1.9.2
+  - rbx
+  - ree
+  - ruby-head
+env:
+  - DB=mysql
+  - DB=postgres
+branches:
+  only:
+    - master
+    - develop

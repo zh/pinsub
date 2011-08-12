@@ -1,3 +1,7 @@
 sinatra
 sequel
 simple-rss
+erubis
+pg
+thin
+foreman

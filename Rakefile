@@ -1,12 +1,12 @@
 require "rubygems"
-require 'spec'
-require 'spec/rake/spectask'
+require "rspec/core/rake_task"
 
 task :default => :spec
 
-desc "Run all tests"
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.spec_files = FileList['spec/**/*_spec.rb']
-  
+desc "Run those specs"
+task :spec do
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.rspec_opts = %w{--colour --format progress}
+    t.pattern = 'spec/*_spec.rb'
+  end
 end
-
