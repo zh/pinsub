@@ -4,8 +4,9 @@ describe "My App" do
 
   before(:each) do
     DB[:items].delete
-    DB[:items].insert(topic:'test', author:'test', title:'example', content:'please ignore',
-                      link:'http://example.com/',created:Time.now)
+    DB[:items].insert(:topic=>'test', :author=>'test', :title=>'example', 
+                      :content=>'please ignore', :link=>'http://example.com/', 
+                      :created=>Time.now)
   end
 
   describe "items" do
@@ -59,8 +60,9 @@ describe "My App" do
     end
 
     it "delete all topic items" do
-      DB[:items].insert(topic:'test2', author:'test', title:'example', content:'please ignore',
-                      link:'http://example2.com/',created:Time.now)
+      DB[:items].insert(:topic=>'test2', :author=>'test', :title=>'example', 
+                        :content=>'please ignore', :link=>'http://example2.com/', 
+                        :created=>Time.now)
       DB[:items].all.size.should == 2
       get '/t/test', 'clear' => APASS
       DB[:items].all.size.should == 1
