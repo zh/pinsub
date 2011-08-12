@@ -1,6 +1,9 @@
 body, input, select, table {
   font-family: "Verdana", "Helvetica", sans-serif;
-  font-size: 14px;
-}
+  font-size: 14px; }
+a {
+  color: #07c;
+  text-decoration: none; }
+a:hover { text-decoration: underline; }
 label { display: block; }
 em { font-size: 0.8em; }

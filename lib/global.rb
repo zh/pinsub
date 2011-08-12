@@ -1,8 +1,6 @@
+# encoding: UTF-8
 # Some core classes extensions
 
-# unicode magic
-$KCODE = 'u'
-require 'jcode'
 require 'open-uri'
 
 class String

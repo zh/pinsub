@@ -1,10 +1,10 @@
+# encoding: UTF-8
 #!/usr/bin/env ruby
 
-$KCODE = 'u'
 # add lib dir to load path
 $:.unshift File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
 require 'bundler_helper'
-%w{jcode cgi open-uri logger sinatra global}.each {|lib| require lib}
+%w{cgi open-uri logger sinatra global}.each {|lib| require lib}
 
 configure do
   enable :logging
