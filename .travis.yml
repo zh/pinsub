@@ -5,8 +5,6 @@ rvm:
   - jruby
   - ruby-head
 env:
-  - ISOLATED=true
-  - ISOLATED=false
   - DB=mysql
   - DB=postgres
 branches:
